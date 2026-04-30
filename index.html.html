@@ -6,170 +6,211 @@
     <title>Tomás Henriques | Portfolio</title>
     <style>
         :root {
-            --primary: #007bff;
-            --bg: #0f0f0f;
-            --card-bg: #1a1a1a;
+            --bg: #121212;
+            --card-bg: #1e1e1e;
+            --primary: #00f5d4; /* Azul Turquesa */
             --text: #ffffff;
-            --text-dim: #b3b3b3;
-            --accent: #00d4ff;
+            --text-dim: #a0a0a0;
         }
 
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: 'Inter', system-ui, -apple-system, sans-serif;
             background-color: var(--bg);
             color: var(--text);
-            line-height: 1.6;
             margin: 0;
-            padding: 0;
+            line-height: 1.6;
         }
 
         header {
-            height: 60vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
             text-align: center;
-            background: linear-gradient(135deg, #0f0f0f 0%, #1a1a1a 100%);
-            border-bottom: 2px solid var(--card-bg);
+            padding: 80px 20px;
+            background: linear-gradient(180deg, #1a1a1a 0%, #121212 100%);
         }
 
-        h1 { font-size: 3.5rem; margin: 0; letter-spacing: -1px; text-transform: uppercase; }
-        .subtitle { color: var(--primary); font-size: 1.2rem; font-weight: bold; margin-top: 10px; }
-
-        .container { max-width: 1000px; margin: 0 auto; padding: 40px 20px; }
-
-        section { margin-bottom: 80px; }
-        h2 { 
-            font-size: 1.8rem;
-            border-left: 5px solid var(--primary); 
-            padding-left: 15px; 
-            margin-bottom: 30px;
-            text-transform: uppercase;
+        .profile-img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid var(--primary);
+            margin-bottom: 20px;
+            box-shadow: 0 0 25px rgba(0, 245, 212, 0.2);
         }
 
-        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 25px; }
-        .card { background: var(--card-bg); padding: 30px; border-radius: 12px; border: 1px solid #222; }
+        h1 { margin: 0; font-size: 3.2rem; letter-spacing: -1.5px; }
+        .tagline { color: var(--primary); font-weight: 500; margin-top: 10px; font-size: 1.2rem; }
 
-        .skill-item { margin-bottom: 20px; }
-        .skill-info { display: flex; justify-content: space-between; margin-bottom: 8px; }
-        .skill-bar { background: #333; height: 8px; border-radius: 4px; overflow: hidden; }
-        .skill-progress { background: linear-gradient(90deg, var(--primary), var(--accent)); height: 100%; }
+        .container { max-width: 900px; margin: 0 auto; padding: 40px 20px; }
 
-        .swot-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
-        .swot-card { padding: 20px; border-radius: 8px; }
-        .s { border-top: 4px solid #28a745; background: rgba(40, 167, 69, 0.05); }
-        .w { border-top: 4px solid #dc3545; background: rgba(220, 53, 69, 0.05); }
-        .o { border-top: 4px solid #ffc107; background: rgba(255, 193, 7, 0.05); }
-        .t { border-top: 4px solid #fd7e14; background: rgba(253, 126, 20, 0.05); }
+        section { margin-bottom: 60px; }
+        h2 { font-size: 1.6rem; color: var(--primary); text-transform: uppercase; letter-spacing: 2px; margin-bottom: 25px; }
+
+        .about-text { font-size: 1.1rem; color: var(--text-dim); text-align: justify; }
+
+        .swot-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+        }
+
+        .card {
+            background: var(--card-bg);
+            padding: 25px;
+            border-radius: 12px;
+            border-bottom: 2px solid rgba(0, 245, 212, 0.1);
+            margin-bottom: 15px;
+        }
+
+        .card h3 { font-size: 1.2rem; margin-top: 0; color: var(--text); }
+        .card p { margin: 8px 0; color: var(--text-dim); }
+        .card ul { padding-left: 20px; margin-bottom: 0; color: var(--text-dim); }
+
+        .lang-container { margin-bottom: 18px; }
+        .lang-info { display: flex; justify-content: space-between; margin-bottom: 8px; font-weight: 500; }
+        .progress-bar { background: #333; height: 10px; border-radius: 5px; overflow: hidden; }
+        .progress-fill { background: var(--primary); height: 100%; border-radius: 5px; }
+
+        .nav-links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-top: 25px;
+        }
 
         .btn {
-            display: inline-block;
-            background: var(--primary);
-            color: white;
-            padding: 12px 25px;
-            border-radius: 30px;
+            background: transparent;
+            border: 1px solid var(--primary);
+            color: var(--primary);
+            padding: 12px 24px;
+            border-radius: 6px;
             text-decoration: none;
-            font-weight: bold;
-            margin-top: 20px;
+            font-weight: 600;
             transition: 0.3s;
         }
-        .btn:hover { background: var(--accent); transform: translateY(-2px); }
 
-        ul { padding-left: 20px; color: var(--text-dim); }
-        li { margin-bottom: 10px; }
+        .btn:hover { background: var(--primary); color: #121212; }
 
-        footer { text-align: center; padding: 60px; border-top: 1px solid #222; color: var(--text-dim); }
-        footer a { color: var(--primary); margin: 0 10px; }
+        .contact-footer {
+            background: var(--card-bg);
+            padding: 50px 20px;
+            text-align: center;
+            border-top: 1px solid #333;
+        }
+
+        .contact-info a { color: var(--text-dim); text-decoration: none; margin-bottom: 12px; display: block; font-size: 1.1rem;}
+        .contact-info a:hover { color: var(--primary); }
+
+        footer { padding: 30px; text-align: center; font-size: 0.85rem; color: #555; }
     </style>
 </head>
 <body>
 
     <header>
+        <img src="foto.png" alt="Tomás Henriques" class="profile-img">
         <h1>Tomás Henriques</h1>
-        <p class="subtitle">Engenharia Informática | Ciências e Tecnologias</p>
-        <a href="https://github.com/tomashenriques04" target="_blank" class="btn">Ver GitHub</a>
+        <p class="tagline">Engenharia Informática Universidade Lusófona</p>
     </header>
 
     <div class="container">
         
-        <section id="sobre">
+        <section id="about">
             <h2>Sobre Mim</h2>
-            <p>Estudante de Engenharia Informática na Universidade Lusófona com base sólida vinda do curso de <strong>Ciências e Tecnologias</strong>. Atualmente focado em elevar as minhas capacidades em linguagens como <strong>C e Kotlin</strong>, aplicando conceitos de física e lógica em projetos práticos. Possuo um nível C de Inglês pela Cambridge School, facilitando a integração em equipas globais.</p>
-        </section>
-
-        <section id="competencias">
-            <h2>Competências & Skills</h2>
-            <div class="grid">
-                <div class="card">
-                    <div class="skill-item">
-                        <div class="skill-info"><span>Linguagem C</span><span>75%</span></div>
-                        <div class="skill-bar"><div class="skill-progress" style="width: 75%;"></div></div>
-                    </div>
-                    <div class="skill-item">
-                        <div class="skill-info"><span>Kotlin</span><span>80%</span></div>
-                        <div class="skill-bar"><div class="skill-progress" style="width: 80%;"></div></div>
-                    </div>
-                    <div class="skill-item">
-                        <div class="skill-info"><span>Inglês (Cambridge C)</span><span>95%</span></div>
-                        <div class="skill-bar"><div class="skill-progress" style="width: 95%;"></div></div>
-                    </div>
-                </div>
+            <div class="about-text">
+                O meu nome é Tomás e sou aluno de Engenharia Informática na Lusófona. Neste momento, dedico-me principalmente a melhorar as minhas competências em C e Kotlin através dos projetos de cada cadeira. Considero-me uma pessoa fácil de lidar, focada no trabalho em equipa e com facilidade em inglês após ter recebido um certificado nível C na Cambridge School. O meu objetivo é continuar a programar e futuramente seguir algo relacionado com a área.
             </div>
         </section>
 
-        <section id="portfolio">
-            <h2>Destaque de Projeto</h2>
+        <section id="education">
+            <h2>Educação</h2>
             <div class="card">
-                <h3>🎯 Simulador de Física (Canhão)</h3>
-                <p>Desenvolvido em <strong>Kotlin</strong>, este projeto simula a trajetória de um projétil para ultrapassar obstáculos. Utiliza conceitos de cinemática aprendidos em Ciências e Tecnologias para calcular ângulos e forças de impacto.</p>
-                <a href="https://github.com/tomashenriques04" target="_blank" style="color: var(--primary);">Ver código fonte →</a>
+                <h3>Universidade Lusófona de Lisboa</h3>
+                <p>Licenciatura em Engenharia Informática | 2024 - Presente</p>
+            </div>
+            <div class="card">
+                <h3>Escola Camilo Castelo Branco</h3>
+                <p>Ensino Secundário - Ciências e Tecnologias</p>
+            </div>
+            <div class="card">
+                <h3>Cambridge School Benfica</h3>
+                <p>Curso de Inglês - Nível C (Certificado Cambridge)</p>
+            </div>
+        </section>
+
+        <section id="languages">
+            <h2>Languages</h2>
+            <div class="card">
+                <div class="lang-container">
+                    <div class="lang-info"><span>Português</span><span>100%</span></div>
+                    <div class="progress-bar"><div class="progress-fill" style="width: 100%;"></div></div>
+                </div>
+                <div class="lang-container">
+                    <div class="lang-info"><span>Inglês (Certificado C)</span><span>75%</span></div>
+                    <div class="progress-bar"><div class="progress-fill" style="width: 75%;"></div></div>
+                </div>
+                <div class="lang-container">
+                    <div class="lang-info"><span>Espanhol</span><span>75%</span></div>
+                    <div class="progress-bar"><div class="progress-fill" style="width: 75%;"></div></div>
+                </div>
             </div>
         </section>
 
         <section id="swot">
-            <h2>Análise SWOT Pessoal</h2>
+            <h2>SWOT</h2>
             <div class="swot-grid">
-                <div class="swot-card s">
-                    <strong>Forças</strong>
+                <div class="card">
+                    <h3>Strengths</h3>
                     <ul>
-                        <li>Domínio de Kotlin e C</li>
-                        <li>Inglês fluente (Certificado C)</li>
-                        <li>Forte base matemática</li>
+                        <li>Inglês fluente (Certificado Cambridge nivel C)</li>
+                        <li>Focado em trabalho de equipa</li>
+                        <li>Lógica de programação (C/Kotlin)</li>
                     </ul>
                 </div>
-                <div class="swot-card w">
-                    <strong>Fraquezas</strong>
+                <div class="card">
+                    <h3>Weaknesses</h3>
                     <ul>
                         <li>Experiência profissional limitada</li>
-                        <li>Foco em poucas linguagens</li>
+                        <li>Domínio de poucas linguagens</li>
                     </ul>
                 </div>
-                <div class="swot-card o">
-                    <strong>Oportunidades</strong>
+                <div class="card">
+                    <h3>Opportunities</h3>
                     <ul>
-                        <li>Estágios em Game Dev (Miniclip)</li>
-                        <li>Evolução para Android (Kotlin)</li>
+                        <li>Estágio em Game Dev (Miniclip)</li>
                     </ul>
                 </div>
-                <div class="swot-card t">
-                    <strong>Ameaças</strong>
+                <div class="card">
+                    <h3>Threats</h3>
                     <ul>
-                        <li>Mercado altamente competitivo</li>
-                        <li>Evolução rápida de frameworks</li>
+                        <li>Mercado competitivo</li>
+                        <li>Evolução rápida das IA</li>
                     </ul>
                 </div>
+            </div>
+        </section>
+
+        <section id="links">
+            <h2>Portfólio & Documentos</h2>
+            <div class="nav-links">
+                <a href="https://github.com/tomashenriques04" target="_blank" class="btn">GitHub</a>
+                <a href="https://www.linkedin.com/in/tom%C3%A1s-figueiredo-henriques-81524b382/" target="_blank" class="btn">LinkedIn</a>
+                <a href="#" class="btn">Currículo (PDF)</a>
+                <a href="#" class="btn">Carta de Apresentação</a>
             </div>
         </section>
 
     </div>
 
-    <footer>
-        <p>Tomás Henriques &copy; 2026</p>
-        <div>
-            <a href="https://github.com/tomashenriques04">GitHub</a> | 
-            <a href="mailto:tomash@gmail.com">Email</a>
+    <div class="contact-footer">
+        <h2>Contactos</h2>
+        <div class="contact-info">
+            <a href="mailto:tomasfhenriques@gmail.com">Email: tomasfhenriques@gmail.com</a>
+            <a href="https://www.linkedin.com/in/tom%C3%A1s-figueiredo-henriques-81524b382/" target="_blank">LinkedIn Profile</a>
+            <a href="https://github.com/tomashenriques04" target="_blank">GitHub Profile</a>
         </div>
+    </div>
+
+    <footer>
+        Tomás Figueiredo Henriques &copy; 2026
     </footer>
 
 </body>
