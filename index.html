@@ -55,6 +55,16 @@
             margin-bottom: 15px;
         }
 
+        .card h3 { font-size: 1.2rem; margin-top: 0; color: var(--text); }
+        .card p { margin: 8px 0; color: var(--text-dim); }
+        .card ul { padding-left: 20px; margin-bottom: 0; color: var(--text-dim); }
+
+        .swot-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+        }
+
         .lang-container { margin-bottom: 18px; }
         .lang-info { display: flex; justify-content: space-between; margin-bottom: 8px; font-weight: 500; }
         .progress-bar { background: #333; height: 10px; border-radius: 5px; overflow: hidden; }
@@ -91,7 +101,6 @@
         .contact-info a { color: var(--text-dim); text-decoration: none; margin-bottom: 12px; display: block; }
         .contact-info a:hover { color: var(--primary); }
 
-        /* Estilo para a Carta que abre por cima */
         #modal-carta {
             display: none;
             position: fixed;
@@ -110,7 +119,7 @@
             border-radius: 8px;
             font-family: "Times New Roman", serif;
         }
-        .close-btn { color: var(--primary); font-weight: bold; cursor: pointer; float: right; margin-bottom: 20px; }
+        .close-btn { color: #ff4d4d; font-weight: bold; cursor: pointer; float: right; margin-bottom: 20px; }
 
         footer { padding: 30px; text-align: center; font-size: 0.85rem; color: #555; }
     </style>
@@ -132,6 +141,22 @@
             </div>
         </section>
 
+        <section id="education">
+            <h2>Educação</h2>
+            <div class="card">
+                <h3>Universidade Lusófona de Lisboa</h3>
+                <p>Licenciatura em Engenharia Informática | 2024 - Presente</p>
+            </div>
+            <div class="card">
+                <h3>Escola Camilo Castelo Branco</h3>
+                <p>Ensino Secundário - Ciências e Tecnologias</p>
+            </div>
+            <div class="card">
+                <h3>Cambridge School Benfica</h3>
+                <p>Curso de Inglês - Nível C (Certificado Cambridge)</p>
+            </div>
+        </section>
+
         <section id="languages">
             <h2>Línguas</h2>
             <div class="card">
@@ -146,6 +171,40 @@
                 <div class="lang-container">
                     <div class="lang-info"><span>Espanhol</span><span>90%</span></div>
                     <div class="progress-bar"><div class="progress-fill" style="width: 90%;"></div></div>
+                </div>
+            </div>
+        </section>
+
+        <section id="swot">
+            <h2>SWOT</h2>
+            <div class="swot-grid">
+                <div class="card">
+                    <h3>Strengths</h3>
+                    <ul>
+                        <li>Inglês fluente (Nivel C)</li>
+                        <li>Focado em trabalho de equipa</li>
+                        <li>Lógica em C e Kotlin</li>
+                    </ul>
+                </div>
+                <div class="card">
+                    <h3>Weaknesses</h3>
+                    <ul>
+                        <li>Experiência profissional inicial</li>
+                        <li>Domínio de poucas linguagens</li>
+                    </ul>
+                </div>
+                <div class="card">
+                    <h3>Opportunities</h3>
+                    <ul>
+                        <li>Estágio Game Dev (Miniclip)</li>
+                    </ul>
+                </div>
+                <div class="card">
+                    <h3>Threats</h3>
+                    <ul>
+                        <li>Mercado competitivo</li>
+                        <li>Evolução das IAs</li>
+                    </ul>
                 </div>
             </div>
         </section>
