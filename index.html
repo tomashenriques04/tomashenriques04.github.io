@@ -91,7 +91,7 @@
 
         .btn:hover { background: var(--primary); color: #121212; }
 
-        /* Modais */
+        /* Estilo dos Modais */
         .modal {
             display: none;
             position: fixed;
@@ -119,12 +119,12 @@
             font-size: 1.1rem;
         }
 
-        /* Vídeo Responsivo no Modal */
+        /* Vídeo para Formato Shorts/Vertical */
         .video-wrapper {
             position: relative;
-            padding-bottom: 177.77%; /* Proporção 9:16 para Shorts/Telemóvel */
+            padding-bottom: 177.77%; 
             height: 0;
-            max-width: 450px;
+            max-width: 400px;
             margin: auto;
             overflow: hidden;
             border-radius: 8px;
@@ -152,7 +152,7 @@
         <section id="about">
             <h2>Sobre Mim</h2>
             <div class="about-text">
-                O meu nome é Tomás e acabei a minha licenciatura em Engenharia Informática na Universidade Lusófona de Lisboa. Dedico-me principalmente a melhorar as minhas competências em C e Kotlin. Sou focado no trabalho em equipa e possuo fluência em inglês (Nível C Cambridge). O meu objetivo é seguir carreira no desenvolvimento de videojogos.
+                O meu nome é Tomás e acabei a minha licenciatura em Engenharia Informática na Universidade Lusófona de Lisboa. Neste momento, dedico-me principalmente a melhorar as minhas competências em C e Kotlin. Considero-me uma pessoa fácil de lidar, focada no trabalho em equipa e com facilidade em inglês após ter recebido um certificado nível C na Cambridge School. O meu objetivo é continuar a programar e futuramente seguir algo relacionado com a área de videojogos.
             </div>
         </section>
 
@@ -167,8 +167,8 @@
                 <p>Ensino Secundário - Ciências e Tecnologias</p>
             </div>
             <div class="card">
-                <h3>Cambridge School</h3>
-                <p>Inglês - Certificado Nível C</p>
+                <h3>Cambridge School Benfica</h3>
+                <p>Curso de Inglês - Nível C (Certificado Cambridge)</p>
             </div>
         </section>
 
@@ -195,11 +195,31 @@
             <div class="swot-grid">
                 <div class="card">
                     <h3>Strengths</h3>
-                    <ul><li>Inglês fluente</li><li>Lógica C / Kotlin</li><li>Equipa</li></ul>
+                    <ul>
+                        <li>Inglês fluente (Nivel C)</li>
+                        <li>Focado em trabalho de equipa</li>
+                        <li>Lógica em C e Kotlin</li>
+                    </ul>
+                </div>
+                <div class="card">
+                    <h3>Weaknesses</h3>
+                    <ul>
+                        <li>Experiência profissional inicial</li>
+                        <li>Domínio de poucas linguagens</li>
+                    </ul>
                 </div>
                 <div class="card">
                     <h3>Opportunities</h3>
-                    <ul><li>Estágio Miniclip</li><li>Game Dev</li></ul>
+                    <ul>
+                        <li>Estágio Game Dev (Miniclip)</li>
+                    </ul>
+                </div>
+                <div class="card">
+                    <h3>Threats</h3>
+                    <ul>
+                        <li>Mercado competitivo</li>
+                        <li>Evolução das IAs</li>
+                    </ul>
                 </div>
             </div>
         </section>
@@ -209,7 +229,7 @@
             <div class="nav-links">
                 <a href="https://github.com/tomashenriques04" target="_blank" class="btn">GitHub</a>
                 <a href="https://www.linkedin.com/in/tom%C3%A1s-figueiredo-henriques-81524b382/" target="_blank" class="btn">LinkedIn</a>
-                <a href="https://www.canva.com/design/DAHIEOhdddw/d36H8vDd9OBxuCqFMbHD3g/view?website" target="_blank" class="btn">Resume</a>
+                <a href="https://www.canva.com/design/DAHIEOhdddw/d36H8vDd9OBxuCqFMbHD3g/view?website" target="_blank" class="btn">Resume (Canva)</a>
                 <button onclick="document.getElementById('modal-carta').style.display='block'" class="btn">Carta de Apresentação</button>
                 <button onclick="document.getElementById('modal-video').style.display='block'" class="btn">Vídeo CV</button>
             </div>
@@ -217,16 +237,27 @@
 
     </div>
 
+    <!-- MODAL CARTA -->
     <div id="modal-carta" class="modal">
         <div class="modal-content" style="font-family: 'Times New Roman', serif;">
             <span class="close-btn" onclick="document.getElementById('modal-carta').style.display='none'">[ FECHAR ]</span>
-            <h3>Carta de Apresentação</h3>
-            <p><strong>Tomás Henriques</strong> - Carnaxide</p>
-            <p>Candidatura para Miniclip Portugal...</p>
-            <p>O meu nome é Tomás Henriques e apresento a minha candidatura para uma vaga de estágio...</p>
+            <p><strong>Tomás Henriques</strong><br>
+            Avenida Edmundo Lima Bastos 2790-484 Carnaxide<br>
+            Telemóvel: 923453434 | tomash@gmail.com</p>
+            
+            <p>Exmo. Senhor Responsável de Recrutamento da Miniclip Portugal,</p>
+            
+            <p>O meu nome é Tomás Henriques e acabei a minha licenciatura em Engenharia Informática na Universidade Lusófona de Lisboa. Apresento a minha candidatura para uma vaga de estágio na vossa equipa em Carnaxide.</p>
+            
+            <p>Como jogador de CS:GO e Fortnite, admiro a Miniclip pela capacidade de criar experiências viciantes como o 8 ball pool e o agar.io. Durante o meu percurso, foquei-me em C e Kotlin, tendo desenvolvido um simulador de física de um canhão em Kotlin.</p>
+            
+            <p>Possuo o certificado de nível C da Cambridge School e estou pronto para trabalhar num ambiente internacional. Subscrevo-me com a mais elevada consideração,</p>
+            
+            <p>Tomás Henriques</p>
         </div>
     </div>
 
+    <!-- MODAL VÍDEO -->
     <div id="modal-video" class="modal">
         <div class="modal-content">
             <span class="close-btn" onclick="document.getElementById('modal-video').style.display='none'">[ FECHAR ]</span>
@@ -235,6 +266,12 @@
                 <iframe src="https://www.youtube.com/embed/8hwNmI1s6oA" allowfullscreen></iframe>
             </div>
         </div>
+    </div>
+
+    <div class="contact-footer" style="background: var(--card-bg); padding: 50px 20px; text-align: center;">
+        <h2>Contactos</h2>
+        <a href="mailto:tomasfhenriques@gmail.com" style="color: var(--text-dim); text-decoration: none; display: block; margin-bottom: 10px;">Email: tomasfhenriques@gmail.com</a>
+        <a href="https://www.linkedin.com/in/tom%C3%A1s-figueiredo-henriques-81524b382/" target="_blank" style="color: var(--text-dim); text-decoration: none;">LinkedIn Profile</a>
     </div>
 
     <footer>Tomás Figueiredo Henriques &copy; 2026</footer>
