@@ -91,11 +91,12 @@
 
         .btn:hover { background: var(--primary); color: #121212; }
 
+        /* Estilos dos Modais (Carta e Vídeo) */
         .modal {
             display: none;
             position: fixed;
             top: 0; left: 0; width: 100%; height: 100%;
-            background: rgba(0,0,0,0.95);
+            background: rgba(0,0,0,0.9);
             z-index: 1000;
             overflow-y: auto;
             padding: 40px 10px;
@@ -103,9 +104,9 @@
         .modal-content {
             background: white;
             color: black;
-            max-width: 850px;
+            max-width: 800px;
             margin: auto;
-            padding: 50px;
+            padding: 40px;
             border-radius: 8px;
             position: relative;
         }
@@ -114,19 +115,186 @@
             font-weight: bold; 
             cursor: pointer; 
             float: right; 
-            margin-bottom: 20px;
+            font-size: 1.2rem;
         }
 
         .video-wrapper {
             position: relative;
-            padding-bottom: 177.77%; 
+            padding-bottom: 56.25%; /* 16:9 */
             height: 0;
-            max-width: 400px;
-            margin: auto;
             overflow: hidden;
             border-radius: 8px;
             background: #000;
         }
         .video-wrapper iframe {
             position: absolute;
-            top: 0; left: 0; width: 100%; height: 100
+            top: 0; left: 0; width: 100%; height: 100%;
+            border: 0;
+        }
+
+        footer { padding: 30px; text-align: center; font-size: 0.85rem; color: #555; }
+    </style>
+</head>
+<body>
+
+    <header>
+        <img src="foto.png" alt="Tomás Henriques" class="profile-img">
+        <h1>Tomás Henriques</h1>
+        <p class="tagline">Engenharia Informática Universidade Lusófona</p>
+    </header>
+
+    <div class="container">
+        
+        <section id="about">
+            <h2>Sobre Mim</h2>
+            <div class="about-text">
+                O meu nome é Tomás e acabei a minha licenciatura em Engenharia Informática na Universidade Lusófona de Lisboa. Dedico-me principalmente a melhorar as minhas competências em C e Kotlin. Sou focado no trabalho em equipa e possuo um forte conhecimento em inglês (Nível C Cambridge). O meu objetivo é seguir carreira na area especialmente no desenvolvimento de videojogos.
+            </div>
+        </section>
+
+        <section id="education">
+            <h2>Educação</h2>
+            <div class="card">
+                <h3>Universidade Lusófona de Lisboa</h3>
+                <p>Licenciatura em Engenharia Informática | 2024 - Presente</p>
+            </div>
+            <div class="card">
+                <h3>Escola Camilo Castelo Branco</h3>
+                <p>Ensino Secundário - Ciências e Tecnologias</p>
+            </div>
+            <div class="card">
+                <h3>Cambridge School Benfica</h3>
+                <p>Curso de Inglês - Certificado Nível C</p>
+            </div>
+        </section>
+
+        <section id="languages">
+            <h2>Línguas</h2>
+            <div class="card">
+                <div class="lang-container">
+                    <div class="lang-info"><span>Português</span><span>100%</span></div>
+                    <div class="progress-bar"><div class="progress-fill" style="width: 100%;"></div></div>
+                </div>
+                <div class="lang-container">
+                    <div class="lang-info"><span>Inglês</span><span>80%</span></div>
+                    <div class="progress-bar"><div class="progress-fill" style="width: 80%;"></div></div>
+                </div>
+                <div class="lang-container">
+                    <div class="lang-info"><span>Espanhol</span><span>90%</span></div>
+                    <div class="progress-bar"><div class="progress-fill" style="width: 90%;"></div></div>
+                </div>
+            </div>
+        </section>
+
+        <section id="swot">
+            <h2>SWOT</h2>
+            <div class="swot-grid">
+                <div class="card">
+                    <h3>Strengths</h3>
+                    <ul>
+                        <li>Inglês fluente (Nivel C)</li>
+                        <li>Focado em trabalho de equipa</li>
+                        <li>Conhecimento em C e Kotlin</li>
+                    </ul>
+                </div>
+                <div class="card">
+                    <h3>Weaknesses</h3>
+                    <ul>
+                        <li>Experiência profissional inicial</li>
+                        <li>Domínio de poucas linguagens</li>
+                    </ul>
+                </div>
+                <div class="card">
+                    <h3>Opportunities</h3>
+                    <ul>
+                        <li>Estágio Game Dev (Miniclip)</li>
+                        <li>Crescimento na indústria de Gaming</li>
+                    </ul>
+                </div>
+                <div class="card">
+                    <h3>Threats</h3>
+                    <ul>
+                        <li>Mercado de trabalho competitivo</li>
+                        <li>Evolução das IAs</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section id="links">
+            <h2>Portfólio & Documentos</h2>
+            <div class="nav-links">
+                <a href="https://github.com/tomashenriques04" target="_blank" class="btn">GitHub</a>
+                <a href="https://www.linkedin.com/in/tomás-figueiredo-henriques-81524b382?skipRedirect=true" target="_blank" class="btn">LinkedIn</a>
+                <a href="https://www.canva.com/design/DAHIEOhdddw/d36H8vDd9OBxuCqFMbHD3g/view?website" target="_blank" class="btn">Resume (Canva)</a>
+                <button onclick="openModal('modal-carta')" class="btn">Carta de Apresentação</button>
+                <button onclick="openModal('modal-video')" class="btn">Vídeo CV</button>
+            </div>
+        </section>
+
+    </div>
+
+    <div id="modal-carta" class="modal">
+        <div class="modal-content" style="font-family: 'Times New Roman', serif; color: black; text-align: justify;">
+            <span class="close-btn" onclick="closeModal('modal-carta')">[ FECHAR ]</span>
+            <p><strong>Tomás Henriques</strong><br>
+            Avenida Edmundo Lima Bastos 2790-484 Carnaxide<br>
+            Telemóvel: 923453434 | tomash@gmail.com</p>
+            
+            <p>Exmo. Senhor Responsável de Recrutamento,<br>
+            Miniclip Portugal Rua Alfredo da Silva, nº 14, Edifício Play 2790-012 Carnaxide, Portugal</p>
+            
+            <p><strong>Assunto: Candidatura a Estágio de Desenvolvimento de Jogos</strong></p>
+            
+            <p>O meu nome é Tomás Henriques e acabei a minha licenciatura em Engenharia Informática na Universidade Lusófona de Lisboa. Tendo conhecimento da vossa posição de liderança e inovação no mercado global de jogos mobile e por isso apresento a minha candidatura para uma vaga de estágio na vossa equipa em Carnaxide. Acredito que a Miniclip é o local ideal para aplicar e expandir as competências técnicas que adquiri ao longo da minha formação.</p>
+            
+            <p>Como jogador habitual de jogos competitivos como CS:GO e Fortnite, tenho um interesse enorme em perceber o que corre por trás dos grandes sucessos da vossa indústria. Admiro a Miniclip pela capacidade de criar experiências viciantes e acessíveis a milhões de utilizadores, e o meu objetivo é contribuir as mesmas.</p>
+            
+            <p>Durante o meu percurso universitário, foquei-me no domínio de linguagens como C e Kotlin. Um dos projetos de que mais me orgulho foi o desenvolvimento de um simulador de física de um canhão em Kotlin, onde o desafio era calcular o ângulo exato para a bola ultrapassar obstáculos. Esta experiência permitiu-me perceber o quão desafiante e divertido é aplicar lógica e cálculos matemáticos para criar mecânicas de jogo fluidas.</p>
+            
+            <p>Além da vertente técnica, possuo o certificado de nível C da Cambridge School, o que me garante total fluência para trabalhar num ambiente internacional e multicultural como o da Miniclip. Considero-me uma pessoa focada no trabalho em equipa, com facilidade de comunicação e uma enorme vontade de aprender com os melhores profissionais do setor.</p>
+            
+            <p>Sinto que mereço esta oportunidade não só pelo facto de uma das vossas sedes ser perto da minha casa, mas também porque os vossos jogos fizeram parte da minha infância como é o caso do 8 ball pool e do agar.io.</p>
+            
+            <p>Gostaria de, numa entrevista pessoal, poder dar outras informações que penso serem de mútuo interesse e demonstrar como a minha dedicação pode ser uma mais-valia para os vossos projetos atuais.</p>
+            
+            <p>Subscrevo-me com a mais elevada consideração,</p>
+            <p>Tomás Henriques</p>
+        </div>
+    </div>
+
+    <div id="modal-video" class="modal">
+        <div class="modal-content">
+            <span class="close-btn" onclick="closeModal('modal-video')">[ FECHAR ]</span>
+            <h3 style="color:black; text-align:center; margin-top:0;">O meu Vídeo CV</h3>
+            <div class="video-wrapper">
+                <iframe src="https://www.youtube.com/embed/8hwNmI1s6oA" allowfullscreen></iframe>
+            </div>
+        </div>
+    </div>
+
+    <div class="contact-footer" style="background: var(--card-bg); padding: 50px 20px; text-align: center;">
+        <h2>Contactos</h2>
+        <p style="color: var(--text-dim);">Email: tomasfhenriques@gmail.com</p>
+        <a href="https://www.linkedin.com/in/tomás-figueiredo-henriques-81524b382?skipRedirect=true" target="_blank" style="color: var(--primary); text-decoration: none;">Ver Perfil LinkedIn</a>
+    </div>
+
+    <footer>Tomás Figueiredo Henriques &copy; 2026</footer>
+
+    <script>
+        function openModal(id) {
+            document.getElementById(id).style.display = "block";
+        }
+        function closeModal(id) {
+            document.getElementById(id).style.display = "none";
+        }
+        // Fecha o modal se clicar fora dele
+        window.onclick = function(event) {
+            if (event.target.className === 'modal') {
+                event.target.style.display = "none";
+            }
+        }
+    </script>
+
+</body>
+</html>
